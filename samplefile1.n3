@@ -7,8 +7,8 @@
 @prefix ns4: <http://qudt.org/1.1/vocab/> .
 
 <http://openiot.eu/resource/59>
-  ns0:category "Environment" ;
-  ns1:observes ns0:Pir ;
+  ns0:category "Health" ;
+  ns1:observes "ihealth SpO2" ;
   a ns1:Sensor .
 
 <http://openiot.eu/resource/7>
@@ -18,7 +18,7 @@
 <http://openiot.eu/resource/117821>
   ns1:madeBySensor <http://openiot.eu/resource/59> ;
   ns1:resultTime "1.5670368E9"^^xsd:float ;
-  ns4:unit "\"SpO2\"" ;
+  ns4:unit "SpO2" ;
   ns1:hasSimpleResult "90.0"^^xsd:float ;
-  ns1:observedProperty ns0:Pir ;
+  ns1:observedProperty "SpO2" ;
   a ns1:Observation .

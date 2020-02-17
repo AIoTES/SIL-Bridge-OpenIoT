@@ -57,7 +57,7 @@ public class TranslateObsrToRDF {
 
     }
     if (field.getKey().equals("observedProperty")) {
-     observationRsr.addProperty(mdl.createProperty(sosa + "observedProperty"), mdl.getResource(openiot + "Pir"));
+     observationRsr.addProperty(mdl.createProperty(sosa + "observedProperty"), mdl.getResource(openiot + field.getValue()));
     }
     if (field.getKey().equals("value")) {
      observationRsr.addProperty(mdl.createProperty(sosa + "hasSimpleResult"), mdl.createTypedLiteral(new Float(field.getValue().floatValue())));
@@ -90,12 +90,31 @@ public class TranslateObsrToRDF {
        if (sensorField.getKey().equals("id")) {
         sensorRsr = mdl.createResource(openiot_res + sensorField.getValue());
         sensorRsr.addProperty(RDF.type, mdl.createResource(sosa + "Sensor"));
-        sensorRsr.addProperty(mdl.createProperty(sosa + "observes"), mdl.createResource(openiot + "Pir"));
-        sensorRsr.addProperty(mdl.createProperty(openiot + "category"), mdl.createTypedLiteral(new String("Environment")));
+    
+        
 
         observationRsr.addProperty(mdl.createProperty(sosa + "madeBySensor"), sensorRsr);
 
        }
+       
+       if(sensorField.getKey().equals("sensorType")){
+    	    sensorRsr.addProperty(mdl.createProperty(sosa + "observes"), mdl.createResource(openiot + sensorField.getValue()));
+       }
+       
+       if(sensorField.getKey().equals("category")){
+    	   
+    	   JsonNode categoryObj= sensorField.getValue();
+    	   Iterator<Entry<String, JsonNode>> categoryFields = categoryObj.fields();
+    	   
+    	   while(categoryFields.hasNext()){
+    		   Entry<String, JsonNode> categoryFeild = categoryFields.next();
+    		   if(categoryFeild.getKey().equals("name")){
+    			   sensorRsr.addProperty(mdl.createProperty(openiot + "category"), mdl.createTypedLiteral(new String(categoryFeild.getValue().textValue())));
+    		   }
+    		   
+    	   }
+       }
+       
 
        // here rdf is create for the platform
        if (sensorField.getKey().equals("platform")) {
@@ -155,8 +174,18 @@ public class TranslateObsrToRDF {
 
    }
   }
-
+  mdl.write(System.out, "N-Triples");
   return mdl;
 
  }
+/* public static void main (String[] args){
+	 
+	 try {
+		 String contents = new String(Files.readAllBytes(Paths.get("sampleObs.json")));
+		TranslateObsrToRDF.toJenaModel(contents);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+ }*/
 }
