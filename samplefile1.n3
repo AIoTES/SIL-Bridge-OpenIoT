@@ -21,4 +21,4 @@
   ns4:unit "\"SpO2\"" ;
   ns1:hasSimpleResult "90.0"^^xsd:float ;
   ns1:observedProperty ns0:Pir ;
-  a "http://www.w3.org/ns/sosa/Observation" .
+  a ns1:Observation .
