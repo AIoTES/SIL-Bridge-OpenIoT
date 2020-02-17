@@ -1,0 +1,9 @@
+eu/interiot/intermw/bridge/openiot/OpenIoTPlatformEmulator$ThingSubscribeInput.class
+eu/interiot/intermw/bridge/openiot/PublisherMock.class
+eu/interiot/intermw/bridge/openiot/OpenIoTPlatformEmulator$SsapInput.class
+eu/interiot/intermw/bridge/openiot/OpenIoTPlatformEmulator$ThingRegisterInput.class
+eu/interiot/intermw/bridge/openiot/OpenIoTPlatformEmulator.class
+eu/interiot/intermw/bridge/openiot/OpenIoTPlatformEmulator$Subscription.class
+eu/interiot/intermw/bridge/openiot/OpenIoTBridgeTest.class
+eu/interiot/intermw/bridge/openiot/SyntacticTranslationTest.class
+eu/interiot/intermw/bridge/openiot/OpenIoTPlatformEmulator$ObservationsPublisher.class

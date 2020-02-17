@@ -1,0 +1,661 @@
+[{
+	"id": 1,
+	"name": "1",
+	"sensorId": "1",
+	"unit": "Presence",
+	"sensorType": "Pir",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 54,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 2,
+	"name": "2",
+	"sensorId": "2",
+	"unit": "Door",
+	"sensorType": "Magnetic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 55,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 3,
+	"name": "3",
+	"sensorId": "3",
+	"unit": "Sound",
+	"sensorType": "Acoustic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 56,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 4,
+	"name": "4",
+	"sensorId": "4",
+	"unit": "Presence",
+	"sensorType": "Pir",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 57,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 5,
+	"name": "5",
+	"sensorId": "5",
+	"unit": "Door",
+	"sensorType": "Magnetic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 58,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 6,
+	"name": "6",
+	"sensorId": "6",
+	"unit": "Sound",
+	"sensorType": "Acoustic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 59,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 7,
+	"name": "7",
+	"sensorId": "7",
+	"unit": "Presence",
+	"sensorType": "Pir",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 60,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 8,
+	"name": "8",
+	"sensorId": "8",
+	"unit": "Door",
+	"sensorType": "Magnetic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 61,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 9,
+	"name": "9",
+	"sensorId": "9",
+	"unit": "Sound",
+	"sensorType": "Acoustic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 62,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 10,
+	"name": "10",
+	"sensorId": "10",
+	"unit": "Presence",
+	"sensorType": "Pir",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 63,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 11,
+	"name": "11",
+	"sensorId": "11",
+	"unit": "Door",
+	"sensorType": "Magnetic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 64,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 12,
+	"name": "12",
+	"sensorId": "12",
+	"unit": "Sound",
+	"sensorType": "Acoustic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 65,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 13,
+	"name": "13",
+	"sensorId": "13",
+	"unit": "Presence",
+	"sensorType": "Pir",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 66,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 14,
+	"name": "14",
+	"sensorId": "14",
+	"unit": "Door",
+	"sensorType": "Magnetic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 67,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 15,
+	"name": "15",
+	"sensorId": "15",
+	"unit": "Sound",
+	"sensorType": "Acoustic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 68,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 16,
+	"name": "16",
+	"sensorId": "16",
+	"unit": "Presence",
+	"sensorType": "Pir",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 69,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 17,
+	"name": "17",
+	"sensorId": "17",
+	"unit": "Door",
+	"sensorType": "Magnetic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 70,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 18,
+	"name": "18",
+	"sensorId": "18",
+	"unit": "Sound",
+	"sensorType": "Acoustic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 71,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 19,
+	"name": "19",
+	"sensorId": "19",
+	"unit": "Presence",
+	"sensorType": "Pir",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 72,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}, {
+	"id": 20,
+	"name": "20",
+	"sensorId": "20",
+	"unit": "Door",
+	"sensorType": "Magnetic",
+	"source": "telosb_system",
+	"latitude": 53.290836,
+	"longitude": -9.074329,
+	"place": {
+		"id": 73,
+		"address": "Galway Business Park",
+		"city": "Galway",
+		"country": "Ireland",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"province": "Country Galway",
+		"continent": "Europe",
+		"infos": "Galway"
+	},
+	"platform": {
+		"id": 2,
+		"name": "Telosb",
+		"about": "Telosb",
+		"address": "Telosb",
+		"latitude": 53.27096,
+		"longitude": -9.062691,
+		"platformId": "telosb_system"
+	},
+	"category": {
+		"id": 1,
+		"name": "Enviroment"
+	}
+}]

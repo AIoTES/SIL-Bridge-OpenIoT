@@ -1,0 +1,53 @@
+{
+	"id": 117821,
+	"observationId": null,
+	"observedProperty": "SpO2",
+	"value": 90.0,
+	"unit": "SpO2",
+	"created": 1567036800.000000000,
+	"sensor": {
+		"id": 59,
+		"name": "Health SpO2",
+		"sensorId": "ihealth_8",
+		"unit": "SpO2",
+		"sensorType": "ihealth SpO2",
+		"source": "ihealth_lab",
+		"latitude": 53.290836,
+		"longitude": -9.074329,
+		"created": 1566550796.000000000,
+		"updated": 1566550796.000000000,
+		"place": {
+			"id": 2,
+			"address": "Galway Business Park",
+			"city": "Galway",
+			"country": "Ireland",
+			"latitude": 51.243343,
+			"longitude": -0.5932438,
+			"province": "Country Galway",
+			"continent": "Europe",
+			"infos": "Galway",
+			"created": 1537532186.000000000,
+			"updated": null
+		},
+		"platform": {
+			"id": 7,
+			"name": "Smart Health Services",
+			"logo": null,
+			"logoImage": null,
+			"logoImageContentType": null,
+			"about": "Health sensors",
+			"address": "IDA Business Park, Newcastle, Galway",
+			"url": "https://ihealthlabs.com",
+			"latitude": 53.27096,
+			"longitude": -9.062691,
+			"platformId": "ihealthlab",
+			"created": 1566550246.000000000,
+			"updated": null
+		},
+		"category": {
+			"id": 2,
+			"name": "Health",
+			"description": "Health monitor"
+		}
+	}
+}
