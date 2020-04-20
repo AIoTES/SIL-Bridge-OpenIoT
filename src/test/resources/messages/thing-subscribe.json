@@ -6,7 +6,7 @@
       "InterIoTMsg:ReceiverPlatformId" : {
         "@id" : "InterIoT:example-platform1"
       },
-      "InterIoTMsg:conversationID" : "conv614d3621-7399-45b1-bf2f-505b24045ea74",
+      "InterIoTMsg:conversationID" : "conv614d3621-7399-45b1-bf2f-505b24045ea902",
       "InterIoTMsg:dateTimeStamp" : "2018-01-15T21:49:00.655+01:00",
       "InterIoTMsg:messageID" : "msg7713aa0f-61df-471d-beec-80e8fb71528a",
       "InterIoTMsg:status" : "myclient"

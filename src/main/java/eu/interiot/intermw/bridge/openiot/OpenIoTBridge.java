@@ -30,8 +30,8 @@ import eu.interiot.message.Message;
 import eu.interiot.message.MessagePayload;
 import eu.interiot.message.managers.URI.URIManagerMessageMetadata;
 import eu.interiot.translators.syntax.openiot.OpenIoTTranslator;
-import eu.interiot.translators.syntax.openiot.ProcessRequests;
-
+import spark.Service;
+import spark.Spark;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -39,6 +39,8 @@ import org.apache.jena.rdf.model.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 
@@ -54,10 +56,10 @@ public class OpenIoTBridge extends AbstractBridge {
     
     ProcessRequests processReq ;
 
-    public OpenIoTBridge(BridgeConfiguration configuration, Platform platform) throws MiddlewareException {
+    public OpenIoTBridge(BridgeConfiguration configuration, Platform platform) throws MiddlewareException, MalformedURLException {
         
     	super(configuration, platform);
-        
+    	
         this.platForm=platform;
         
         httpClient = HttpClientBuilder.create().build();
@@ -98,6 +100,8 @@ public class OpenIoTBridge extends AbstractBridge {
 		
 		logger.debug("subscribe() started.");
 		
+		logger.info("bridge callbackURL is set to {}", bridgeCallbackUrl);
+				
 		Message responseMessage= processReq.thingSubribleMessage(message, this.platform,bridgeCallbackUrl,publisher);
 		
         return createResponseMessage(responseMessage);
@@ -219,6 +223,7 @@ public class OpenIoTBridge extends AbstractBridge {
 		// TRANSLATE MESSAGE PAYLOAD TO FORMAT X AND SEND IT TO PLATFORM
 		Message responseMessage = createResponseMessage(message);
 		try{
+			
 			logger.debug("Sending observation to the platform {}...", platform.getPlatformId());
 			OpenIoTTranslator translator = new OpenIoTTranslator();
 			String body = translator.toFormatX(message.getPayload().getJenaModel());

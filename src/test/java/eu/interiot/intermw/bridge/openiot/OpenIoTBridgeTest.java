@@ -80,10 +80,8 @@ public class OpenIoTBridgeTest {
         URL callbackUrl = new URL(configuration.getProperty("bridge.callback.url"));
         int callbackPort = callbackUrl.getPort();
        
-         Spark.port(8981);
-         //logger.debug("SPARK is listening on port {}: ",Spark.port());
-         //logger.debug("SPARK is listening on port {}: ",Service.ignite().port());
-         
+         Spark.port(callbackPort);
+          
         // create Message objects from serialized messages
         URL url1 = Resources.getResource("messages/platform-register.json");
         String platformRegisterJson = Resources.toString(url1, Charsets.UTF_8);
