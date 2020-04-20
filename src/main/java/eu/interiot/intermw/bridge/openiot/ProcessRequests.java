@@ -57,16 +57,11 @@ import javax.ws.rs.core.MediaType;
 
 public class ProcessRequests {
     private final static Logger logger = LoggerFactory.getLogger(ProcessRequests.class);
-
     private final static String PLATFORM_URL = "http://srvgal106.deri.ie:8018/api/";
-
     private HttpClient httpClient;
     Properties properties;
     Client client;
-    
     private WebTarget platformTarget;
-    
-    
     
     /**
      * parameterized constructor    
@@ -74,11 +69,9 @@ public class ProcessRequests {
      * @param httpClient
      */
     public ProcessRequests(BridgeConfiguration configuration, HttpClient httpClient) {
-
     	this.httpClient= httpClient;
     	this.properties=configuration.getProperties();	
     	client = ClientBuilder.newClient();	
-    
 	}
 
     /**
@@ -93,7 +86,6 @@ public class ProcessRequests {
         sensor.setSensorType("SENSOR");
         return sensor;
     }
-
     
 	/**
 	 *  List of device registered in AIOTES, when platform is registered	
@@ -103,25 +95,20 @@ public class ProcessRequests {
 	 * @return a complete message that includes the metadata and payload.
 	 */
 	public Message thingListDevices(Message message, Platform platform, Publisher<Message> publisher) throws BridgeException, BrokerException {
-		
 	    List<Sensor> devices = null;
 	    System.err.println("base URI: "+platform.getBaseEndpoint().toString());
         try {
         	platformTarget=client.target(platform.getBaseEndpoint().toString());
-        	//platformTarget=client.target("http://srvgal106.deri.ie:8018/api");
         	System.err.println("URI of the sensor list :"+platformTarget.getUri());
-        	
         	devices = platformTarget
                     .path("/api/sensors")
                     .request(MediaType.APPLICATION_JSON_TYPE)
                     .get(new GenericType<List<Sensor>>() {
                     });
-              
         } catch (Exception e) {
             throw new BridgeException(String.format(
                     "Failed to retrieve list of devices from the platform %s.", platform.getPlatformId()), e);
         }
-
         MessageMetadata metadata = new MessageMetadata();
         metadata.initializeMetadata();
         metadata.addMessageType(MessageTypesEnum.DEVICE_REGISTRY_INITIALIZE);
@@ -133,9 +120,7 @@ public class ProcessRequests {
             EntityID entityID = new EntityID(PLATFORM_URL+device.getId());
             payload.createIoTDevice(entityID);
             payload.setHasName(entityID, PLATFORM_URL + device.getName());
-            
             payload.setIsHostedBy(entityID, new EntityID(platform.getPlatformId()));
-
             PropertyID deviceTypePropertyId = new PropertyID("http://www.w3.org/1999/02/22-rdf-syntax-ns#type");
             payload.addDataPropertyAssertionToEntity(entityID, deviceTypePropertyId, IoTDeviceType.SENSOR.getDeviceTypeUri());
         }
@@ -143,13 +128,10 @@ public class ProcessRequests {
         Message registryInitializeMessage = new Message();
         registryInitializeMessage.setMetadata(metadata);
         registryInitializeMessage.setPayload(payload);
-
         // publish DEVICE_REGISTRY_INITIALIZE message
         publisher.publish(registryInitializeMessage);
-
         // return LIST_DEVICES response message
         return registryInitializeMessage;
-        
 	}
 	
 	/**
@@ -160,8 +142,6 @@ public class ProcessRequests {
 	 * @return message that platform is registered otherwise should throw an error message
 	 */
     public  Message platformRegisterMessage(Message msgMetaData, Platform platform, Publisher<Message> publisher) throws IOException, MessageException, URISyntaxException, BridgeException {
-    	
-       
         if (msgMetaData.getMetadata().getMessageTypes().contains(MessageTypesEnum.SYS_INIT)) {
             // restore platform registration after INTER-MW restart. Registration request shouldn't be sent to the platform again.
             logger.debug("Registration of the platform {} has been restored.", platform.getPlatformId());
@@ -169,7 +149,6 @@ public class ProcessRequests {
         }
 
         URL url = new URL(platform.getBaseEndpoint(), "/api/register-platform"); 
-        
         HttpPost httpPost = new HttpPost(url.toURI());
         List<NameValuePair> postParameters = new ArrayList<>();
         postParameters.add(new BasicNameValuePair("platformId", platform.getPlatformId()));
@@ -185,7 +164,6 @@ public class ProcessRequests {
         } finally {
             httpPost.releaseConnection();
         }
-
         logger.debug("Platform {} has been registered successfully.", platform.getPlatformId());
         return msgMetaData;
     }
@@ -198,8 +176,6 @@ public class ProcessRequests {
      * @return success or fail message 
      */
     public Message platformUnRegisterMessage(Message msgMetaData, Platform platform, Publisher<Message> publisher) throws IOException, MessageException, URISyntaxException, BridgeException {
-    	
-    	
     	URL url = new URL(platform.getBaseEndpoint(), "/api/unregister-platform");
         HttpPost httpPost = new HttpPost(url.toURI());
         List<NameValuePair> postParameters = new ArrayList<>();
@@ -215,10 +191,8 @@ public class ProcessRequests {
         } finally {
             httpPost.releaseConnection();
         }
-
         logger.debug("Platform {} has been unregistered.", platform.getPlatformId());
         return msgMetaData;
-
     }
     
     /**
@@ -231,12 +205,8 @@ public class ProcessRequests {
      * @return either success or fail for the subscription
      */
     public   Message thingSubribleMessage(Message message, Platform platform, URL bridgeCallbackUrl, Publisher<Message> publisher) throws IOException, MessageException, BridgeException, URISyntaxException {
-    	
     	String conversationId = message.getMetadata().getConversationId().orElse(null); 
-    	
     	List<String> deviceIds = OpenIoTUtils.extractDeviceIds(message);
-    	
-    	
     	if (message.getMetadata().getMessageTypes().contains(MessageTypesEnum.SYS_INIT)) {
             // restore subscription after INTER-MW restart. Subscription is still active on the platform so the
             // subscribe request shouldn't be sent again.
@@ -245,40 +215,23 @@ public class ProcessRequests {
             createObservationsListener(conversationId, convCallbackUrl, platform, publisher);
             logger.debug("Subscription {} has been restored.", conversationId);
             return message;
-
         } else {
             logger.debug("Subscribing to devices {} with conversationId {}...", deviceIds, conversationId);
-            
-            
             URL url = new URL(platform.getBaseEndpoint(),"/api/subscriptions"); 
-            
             HttpPost httpPost = new HttpPost(url.toURI());
-            
             JsonObject jsonObj= new JsonObject();
-                     
             String file =bridgeCallbackUrl.getFile().endsWith("/") ? bridgeCallbackUrl.getFile()+conversationId : bridgeCallbackUrl.getFile()+"/"+conversationId;
-            
             URL convCallbackUrl = new URL(bridgeCallbackUrl.getProtocol(), bridgeCallbackUrl.getHost(), bridgeCallbackUrl.getPort(), file, null);
-            
-           // URL convCallbackUrl = new URL(bridgeCallbackUrl, conversationId);
-                    
-            
             jsonObj.addProperty("callBackURL", convCallbackUrl.toString());
-            
             jsonObj.addProperty("conversationId", conversationId);
             JsonArray array= new JsonArray();
-            
-            
             for(String devices: deviceIds){
-            	
             	String deviceId = devices.substring(devices.lastIndexOf('/') + 1);
             	JsonObject sensorIds= new JsonObject();
             	sensorIds.addProperty("id", deviceId);
             	array.add(sensorIds);
             }
-            
             jsonObj.add("sensors", array);
-            
             System.out.println(jsonObj);
             StringEntity entity = new StringEntity(jsonObj.toString(), HTTP.UTF_8);
             entity.setContentType("application/json");
@@ -293,12 +246,11 @@ public class ProcessRequests {
                 httpPost.releaseConnection();
             }
 
+            //call the observation listener
             createObservationsListener(conversationId, convCallbackUrl, platform, publisher);
-
             logger.debug("Subscribed successfully to devices {} with conversationId {}...", deviceIds, conversationId);
             return message;
         }
- 
     }
 
     /**
@@ -311,16 +263,11 @@ public class ProcessRequests {
      */
     private void createObservationsListener(String conversationId, URL convCallbackUrl, Platform platform, Publisher<Message> publisher ) {
         logger.debug("Creating callback listener for conversation {} listening at {}...", conversationId, convCallbackUrl);
-        
         try{       
-        	      	
         	String path= "/*";
-        	
         	Spark.post(path, (request, response) -> {
-            
-        		logger.debug("request sent tp host {} and to ip {} ",  request.host(), request.ip());
+       		logger.debug("request sent tp host {} and to ip {} ",  request.host(), request.ip());
         	logger.debug("New observation received from the platform.");
-            
         	try {
                 // create message metadata
                 PlatformMessageMetadata metadata = new MessageMetadata().asPlatformMessageMetadata();
@@ -329,28 +276,16 @@ public class ProcessRequests {
                 metadata.addMessageType(URIManagerMessageMetadata.MessageTypesEnum.RESPONSE);
                 metadata.setSenderPlatformId(new EntityID(platform.getPlatformId()));
                 metadata.setConversationId(conversationId);
-
-                //response.status(200);
-                
-
                 // using OpenIotTranslator convert observations into a MessagePayload object
                 String observation = request.body();
                 System.err.println("observation: "+ observation);
-                
-                //TranslateObsrToRDF.toJenaModel(observation);
-                
-                //OpenIoTTranslator translate= new OpenIoTTranslator();
                 Model output = TranslateObsrToRDF.toJenaModel(observation);//translate.toJenaModel(observation);
-                
                 output.write(System.out, "N-Triples");
-                
                 MessagePayload messagePayload = new MessagePayload(output);
                 Message observationMessage = new Message();
                 observationMessage.setMetadata(metadata);
                 observationMessage.setPayload(messagePayload);
-                
                 publisher.publish(observationMessage);
-                
                 logger.debug("Observation message {} has been published upstream through Inter MW.", observationMessage.getMetadata().getMessageID().get());
                 return "";
 
@@ -366,9 +301,14 @@ public class ProcessRequests {
     	logger.debug("failed to send request using SPARK API {}", e.getMessage());
     }
     }
-    
 
-
+    /**
+     * un-subscribe the client subscribed to a platform 
+     * @param message
+     * @param platform
+     * @param publisher
+     * @return
+     */
     public  Message thingUnsubribleMessage(Message message, Platform platform, Publisher<Message> publisher) throws IOException, MessageException, URISyntaxException, BridgeException {
 
     	String conversationId = message.getMetadata().asPlatformMessageMetadata().getSubscriptionId().get();
@@ -394,7 +334,6 @@ public class ProcessRequests {
         return message;
         
     }
-
     
     protected  Message createResponseMessage(Message message, Platform platform) {
         Message responseMessage = MessageUtils.createResponseMessage(message);
@@ -402,11 +341,7 @@ public class ProcessRequests {
         return responseMessage;
     }
 
-
-
-
 	public Message platformCreateDevices(Message message, Platform platform, Publisher<Message> publisher) throws URISyntaxException, BridgeException, ClientProtocolException, IOException {
-		
 		List<IoTDevice> lstDevices= OpenIoTUtils.extractDevices(message);
 		for (IoTDevice ioTDevice : lstDevices) {
             logger.debug("Sending create-device (start-to-manage) request to the platform for device {}...", ioTDevice.getDeviceId());
@@ -432,8 +367,7 @@ public class ProcessRequests {
         }
         logger.debug("platformCreateDevice finished successfully.");
         return message;
-        
-	}
+    }
 
 	
 }

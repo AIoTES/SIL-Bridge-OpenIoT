@@ -18,8 +18,6 @@
  */
 package eu.interiot.intermw.bridge.openiot;
 
-
-
 import eu.interiot.intermw.bridge.BridgeConfiguration;
 import eu.interiot.intermw.bridge.abstracts.AbstractBridge;
 import eu.interiot.intermw.bridge.exceptions.BridgeException;
@@ -48,77 +46,50 @@ import java.util.List;
 public class OpenIoTBridge extends AbstractBridge {
     private final Logger logger = LoggerFactory.getLogger(eu.interiot.intermw.bridge.openiot.OpenIoTBridge.class);
     final static String PROPERTIES_PREFIX = "openiot-";
-
-    
 	Platform platForm;
-	   
     private HttpClient httpClient;
-    
     ProcessRequests processReq ;
 
     public OpenIoTBridge(BridgeConfiguration configuration, Platform platform) throws MiddlewareException, MalformedURLException {
-        
     	super(configuration, platform);
-    	
         this.platForm=platform;
-        
         httpClient = HttpClientBuilder.create().build();
-        
         processReq =new ProcessRequests(configuration,httpClient);
-        
         logger.debug("OPENIOT bridge is initializing...");
-                
         if (bridgeCallbackUrl == null) { // From the AbstractBridge class
             throw new BridgeException("Invalid OPENIOT bridge configuration.");
         }
-             
         logger.info("OPENIOT bridge has been initialized successfully.");
     }
     
-   
-    
 	@Override
 	public Message registerPlatform(Message message) throws Exception {
-		
 		logger.info("registering open-iot bridge {}...",platform.getPlatformId() );
-		
         Message responseMessage = processReq.platformRegisterMessage(message, this.platForm, publisher);
-        
         return createResponseMessage(responseMessage);
 	}
 	
 	@Override
 	public Message unregisterPlatform(Message message) throws Exception {
-		
         Message responseMessage = processReq.platformUnRegisterMessage(message, this.platForm, publisher);
         return createResponseMessage(responseMessage);
-        
 	}
 
 	@Override
 	public Message subscribe(Message message) throws Exception {
-		
 		logger.debug("subscribe() started.");
-		
 		logger.info("bridge callbackURL is set to {}", bridgeCallbackUrl);
-				
 		Message responseMessage= processReq.thingSubribleMessage(message, this.platform,bridgeCallbackUrl,publisher);
-		
         return createResponseMessage(responseMessage);
     }
     
 	@Override
 	public Message unsubscribe(Message message) throws Exception {
-		
 		logger.info("unsubscribing the conversation {} from the platform {}....", 
 				message.getMetadata().asPlatformMessageMetadata().getSubscriptionId().get()
 				,platform.getPlatformId());
-		
-		
 		Message responseMessage= processReq.thingUnsubribleMessage(message, this.platform,publisher);
-		
 		return createResponseMessage(responseMessage);
-		
 	}
 	
 	@Override
@@ -155,14 +126,11 @@ public class OpenIoTBridge extends AbstractBridge {
 	
 	@Override
 	public Message listDevices(Message message) throws Exception {
-	
 		Message responseMessage = createResponseMessage(message);
 		try{
-		
 			logger.debug("ListDevices started...");
 			// should return the registered devices in the IOT platform
 			responseMessage= processReq.thingListDevices(message, platform,publisher);
-	
 		}
 		catch (Exception e) {
 			logger.error("Error in query: " + e.getMessage());
@@ -178,15 +146,10 @@ public class OpenIoTBridge extends AbstractBridge {
 	
 	@Override
 	public Message platformCreateDevices(Message message) throws Exception {
-			
 		logger.info("platform create devices request received in open-iot bridge");
-		
 		Message responseMessage= processReq.platformCreateDevices(message, this.platform,publisher);
-		
 		return createResponseMessage(responseMessage);
-
 	}
-	
 	
 	@Override
 	public Message platformUpdateDevices(Message message) throws Exception {
@@ -223,19 +186,14 @@ public class OpenIoTBridge extends AbstractBridge {
 		// TRANSLATE MESSAGE PAYLOAD TO FORMAT X AND SEND IT TO PLATFORM
 		Message responseMessage = createResponseMessage(message);
 		try{
-			
 			logger.debug("Sending observation to the platform {}...", platform.getPlatformId());
 			OpenIoTTranslator translator = new OpenIoTTranslator();
 			String body = translator.toFormatX(message.getPayload().getJenaModel());
 			// Get ontology and data for update
 			String ontName = OpenIoTUtils.getOntName(body);
 		    String data = OpenIoTUtils.getUpdateData(body);
-		    
 		    logger.debug("OPENIOT ontology: " + ontName);
 		    logger.debug("Observation data: " + data);
-		    
-		    //client.update(ontName, data); // Needs object ID
-			
 		}catch(Exception ex){
 			logger.error("Error in observe: " + ex.getMessage());
 			throw ex;
@@ -254,12 +212,8 @@ public class OpenIoTBridge extends AbstractBridge {
 			// Get ontology and data for update
 			String ontName = OpenIoTUtils.getOntName(body);
 		    String data = OpenIoTUtils.getUpdateData(body);
-		    
 		    logger.debug("OPENIOT ontology: " + ontName);
 		    logger.debug("Actuation data: " + data);
-		    
-		    //client.update(ontName, data); // Needs object ID
-			
 		}catch(Exception ex){
 			logger.error("Error in actuate: " + ex.getMessage());
 			throw ex;
@@ -272,7 +226,6 @@ public class OpenIoTBridge extends AbstractBridge {
 		logger.debug("Error occured in {}...", message);
 		Message responseMessage = createResponseMessage(message);
 		responseMessage.getMetadata().setStatus("KO");
-//		responseMessage.getMetadata().addMessageType(URIManagerMessageMetadata.MessageTypesEnum.ERROR); // Do we need to add the "error" type in this case ?
 		return responseMessage;
 	}
 
@@ -284,13 +237,10 @@ public class OpenIoTBridge extends AbstractBridge {
 		return responseMessage;
 	}
 
-
-
 	@Override
 	public Message updatePlatform(Message arg0) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
 	
 }
