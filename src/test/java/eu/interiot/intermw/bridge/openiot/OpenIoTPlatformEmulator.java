@@ -37,7 +37,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class OpenIoTPlatformEmulator {
-    private final Logger logger = LoggerFactory.getLogger(OpenIoTBridge.class);
+    private final Logger logger = LoggerFactory.getLogger(OpenIoTBridgeOld.class);
     private Map<String, Subscription> subscriptions = new HashMap<>();
     private Map<String, Thread> subscriptionThreads = new HashMap<>();
     private ObjectMapper objectMapper = new ObjectMapper();

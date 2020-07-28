@@ -67,18 +67,18 @@ public class OpenIoTClient {
 	
 	OpenIoTClient(Properties properties, String baseUrl) throws Exception{
 		try {
-            openiotUser = properties.getProperty(OpenIoTBridge.PROPERTIES_PREFIX + "user"); // USER + PASSWORD OR TOKEN?
-            openiotPassword = properties.getProperty(OpenIoTBridge.PROPERTIES_PREFIX + "password");
-            TOKEN = properties.getProperty(OpenIoTBridge.PROPERTIES_PREFIX + "token");
+            openiotUser = properties.getProperty(OpenIoTBridgeOld.PROPERTIES_PREFIX + "user"); // USER + PASSWORD OR TOKEN?
+            openiotPassword = properties.getProperty(OpenIoTBridgeOld.PROPERTIES_PREFIX + "password");
+            TOKEN = properties.getProperty(OpenIoTBridgeOld.PROPERTIES_PREFIX + "token");
             url = baseUrl;
-            KP = properties.getProperty(OpenIoTBridge.PROPERTIES_PREFIX + "KP");
-            KpInstance = properties.getProperty(OpenIoTBridge.PROPERTIES_PREFIX + "KP-instance", "openiotBridge");
-            deviceOntologyName = properties.getProperty(OpenIoTBridge.PROPERTIES_PREFIX + "device-class");
-            identifierType = properties.getProperty(OpenIoTBridge.PROPERTIES_PREFIX + "device-identifier-type", STRING_TYPE);
-            trustStore = properties.getProperty(OpenIoTBridge.PROPERTIES_PREFIX + "certificate"); // For self-signed certificates
-            trustStorePass = properties.getProperty(OpenIoTBridge.PROPERTIES_PREFIX + "certificate-password"); // For self-signed certificates
-            msSubscriptionRefresh = Integer.valueOf(properties.getProperty(OpenIoTBridge.PROPERTIES_PREFIX + "subscription-refresh", "0")); // Subscription refresh parameter
-            msSessionRefresh = Integer.valueOf(properties.getProperty(OpenIoTBridge.PROPERTIES_PREFIX + "session-refresh", "600000"));
+            KP = properties.getProperty(OpenIoTBridgeOld.PROPERTIES_PREFIX + "KP");
+            KpInstance = properties.getProperty(OpenIoTBridgeOld.PROPERTIES_PREFIX + "KP-instance", "openiotBridge");
+            deviceOntologyName = properties.getProperty(OpenIoTBridgeOld.PROPERTIES_PREFIX + "device-class");
+            identifierType = properties.getProperty(OpenIoTBridgeOld.PROPERTIES_PREFIX + "device-identifier-type", STRING_TYPE);
+            trustStore = properties.getProperty(OpenIoTBridgeOld.PROPERTIES_PREFIX + "certificate"); // For self-signed certificates
+            trustStorePass = properties.getProperty(OpenIoTBridgeOld.PROPERTIES_PREFIX + "certificate-password"); // For self-signed certificates
+            msSubscriptionRefresh = Integer.valueOf(properties.getProperty(OpenIoTBridgeOld.PROPERTIES_PREFIX + "subscription-refresh", "0")); // Subscription refresh parameter
+            msSessionRefresh = Integer.valueOf(properties.getProperty(OpenIoTBridgeOld.PROPERTIES_PREFIX + "session-refresh", "600000"));
             
             sessionKey = null;
             

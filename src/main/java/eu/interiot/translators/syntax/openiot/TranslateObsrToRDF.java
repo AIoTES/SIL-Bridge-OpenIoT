@@ -1,6 +1,9 @@
 package eu.interiot.translators.syntax.openiot;
 
 import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -26,10 +29,9 @@ public class TranslateObsrToRDF {
     public static String wgs84_pos = "http://www.w3.org/2003/01/geo/wgs84_pos#";
     public static String qudt = "http://qudt.org/1.1/vocab/";
     public static String sosa = "http://www.w3.org/ns/sosa/";
+    public static String iiot= "http://inter-iot.eu/GOIoTP#";
 
     public static Model toJenaModel(String message) throws IOException {
-
-        //String contents = new String(Files.readAllBytes(Paths.get("sampleObs.json")));
 
         ObjectMapper mapper = new ObjectMapper();
         JsonFactory factory = mapper.getFactory();
@@ -37,10 +39,12 @@ public class TranslateObsrToRDF {
         JsonNode topLevelNode = mapper.readTree(parser);
 
         Model mdl = ModelFactory.createDefaultModel();
+        mdl.setNsPrefix("openiot", "http://openiot.eu/ontology/");
 
         if (topLevelNode.isObject()) {
 
             Resource observationRsr = null;
+            Resource blankNodeResult= mdl.createResource();
 
             Iterator < Entry < String, JsonNode >> fields = topLevelNode.fields();
 
@@ -50,22 +54,27 @@ public class TranslateObsrToRDF {
                 // create the model for the toplevelNode i.e., observation
                 if (field.getKey().equals("id")) {
 
-                    observationRsr = mdl.createResource(openiot_res + field.getValue());
+                    observationRsr = mdl.createResource(openiot_res + replaceSpaceWithHyphen(field.getValue().asText()));
                     observationRsr.addProperty(RDF.type, mdl.createResource(sosa + "Observation"));
 
                 }
                 if (field.getKey().equals("observedProperty")) {
-                    observationRsr.addProperty(mdl.createProperty(sosa + "observedProperty"), mdl.getResource(openiot + field.getValue()));
+                    observationRsr.addProperty(mdl.createProperty(sosa + "observedProperty"), mdl.getResource(openiot + replaceSpaceWithHyphen(field.getValue().asText())));
                 }
                 if (field.getKey().equals("value")) {
-                    observationRsr.addProperty(mdl.createProperty(sosa + "hasSimpleResult"), mdl.createTypedLiteral(new Float(field.getValue().floatValue())));
+                    observationRsr.addProperty(mdl.createProperty(sosa + "hasResult"), blankNodeResult);
+                    blankNodeResult.addProperty(RDF.type, mdl.createResource(sosa+ "Result"))
+                    .addProperty(mdl.createProperty(iiot+"hasResultValue"), mdl.createTypedLiteral(new Float(field.getValue().floatValue())));
+                    
                 }
                 if (field.getKey().equals("unit")) {
-                    observationRsr.addProperty(mdl.createProperty(qudt + "unit"), mdl.createTypedLiteral(new String(field.getValue().textValue())));
+                    //observationRsr.addProperty(mdl.createProperty(qudt + "unit"), mdl.createTypedLiteral(new String(field.getValue().textValue())));
+                    blankNodeResult.addProperty(mdl.createProperty(iiot+"hasUnit"),mdl.createTypedLiteral(new String(field.getValue().textValue())));
                 }
-                if (field.getKey().equals("created")) {
+                // this time is not used in the message therefore temporarily commented out
+              /*  if (field.getKey().equals("created")) {
                     observationRsr.addProperty(mdl.createProperty(sosa + "resultTime"), mdl.createTypedLiteral(new Float(field.getValue().floatValue())));
-                }
+                }*/
 
                 // start from sensor key that includes all the rest of the information
                 if (field.getKey().equals("sensor")) {
@@ -86,12 +95,12 @@ public class TranslateObsrToRDF {
                             //System.err.println(sensorField.getKey());
                             // get the ID of that sensor and create a sensor type and its properties in model
                             if (sensorField.getKey().equals("id")) {
-                                sensorRsr = mdl.createResource(openiot_res + sensorField.getValue());
+                                sensorRsr = mdl.createResource(openiot_res + replaceSpaceWithHyphen(sensorField.getValue().asText()));
                                 sensorRsr.addProperty(RDF.type, mdl.createResource(sosa + "Sensor"));
                                 observationRsr.addProperty(mdl.createProperty(sosa + "madeBySensor"), sensorRsr);
                             }
                             if (sensorField.getKey().equals("sensorType")) {
-                                sensorRsr.addProperty(mdl.createProperty(sosa + "observes"), mdl.createResource(openiot + sensorField.getValue()));
+                                sensorRsr.addProperty(mdl.createProperty(sosa + "observes"), mdl.createResource(openiot + replaceSpaceWithHyphen(sensorField.getValue().asText())));
                             }
                             if (sensorField.getKey().equals("category")) {
                                 JsonNode categoryObj = sensorField.getValue();
@@ -120,7 +129,7 @@ public class TranslateObsrToRDF {
                                             JsonNode > platformField = platformFields.next();
                                         System.err.println(platformField.getKey());
                                         if (platformField.getKey().equals("id")) {
-                                            platformRsr = mdl.createResource(openiot_res + platformField.getValue());
+                                            platformRsr = mdl.createResource(openiot_res + replaceSpaceWithHyphen(platformField.getValue().asText()));
                                             platformRsr.addProperty(RDF.type, mdl.createResource(sosa + "Platform"));
                                             platformRsr.addProperty(RDF.type, mdl.createResource(wgs84_pos + "Point"));
                                             platformRsr.addProperty(mdl.createProperty(geo + "hasGeometry"), blankNodePoint);
@@ -151,11 +160,23 @@ public class TranslateObsrToRDF {
 
             }
         }
+        
+
+        //get the prefixes from the model and add them into @context
+        for(Entry<String, String> prefix: mdl.getNsPrefixMap().entrySet())
+        {       System.out.println("prefix is: "+ prefix.getKey() +"and url is: "+prefix.getValue());
+               
+        }
         mdl.write(System.out, "N-Triples");
         return mdl;
 
     }
-    /* public static void main (String[] args){
+    
+    private  static String replaceSpaceWithHyphen (String string) {
+    	
+    	return string.replace(' ' , '_');
+    }
+     public static void main (String[] args){
     	 
     	 try {
     		 String contents = new String(Files.readAllBytes(Paths.get("sampleObs.json")));
@@ -164,5 +185,5 @@ public class TranslateObsrToRDF {
     		// TODO Auto-generated catch block
     		e.printStackTrace();
     	}
-     }*/
+     }
 }

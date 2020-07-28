@@ -141,7 +141,7 @@ public class OpenIoTBridgeTest {
         platform.setBaseEndpoint(new URL("http://srvgal106.deri.ie:8018"));
         platform.setLocation("http://test.inter-iot.eu/TestLocation");
 
-        OpenIoTBridge openiotBridge = new OpenIoTBridge(config, platform);
+        OpenIoTBridgeOld openiotBridge = new OpenIoTBridgeOld(config, platform);
         PublisherMock<Message> publisher = new PublisherMock<>();
         openiotBridge.setPublisher(publisher);
 

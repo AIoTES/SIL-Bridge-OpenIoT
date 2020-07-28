@@ -8,9 +8,11 @@ import eu.interiot.intermw.bridge.BridgeConfiguration;
 import eu.interiot.intermw.bridge.exceptions.BridgeException;
 import eu.interiot.intermw.comm.broker.Publisher;
 import eu.interiot.intermw.comm.broker.exceptions.BrokerException;
+import eu.interiot.intermw.commons.exceptions.InvalidMessageException;
 import eu.interiot.intermw.commons.model.IoTDevice;
 import eu.interiot.intermw.commons.model.Platform;
 import eu.interiot.intermw.commons.model.enums.IoTDeviceType;
+import eu.interiot.intermw.commons.requests.SubscribeReq;
 import eu.interiot.message.Message;
 import eu.interiot.message.MessageMetadata;
 import eu.interiot.message.MessagePayload;
@@ -62,6 +64,7 @@ public class ProcessRequests {
     Properties properties;
     Client client;
     private WebTarget platformTarget;
+    static Platform observationPlatformId;
     
     /**
      * parameterized constructor    
@@ -69,6 +72,7 @@ public class ProcessRequests {
      * @param httpClient
      */
     public ProcessRequests(BridgeConfiguration configuration, HttpClient httpClient) {
+
     	this.httpClient= httpClient;
     	this.properties=configuration.getProperties();	
     	client = ClientBuilder.newClient();	
@@ -95,7 +99,8 @@ public class ProcessRequests {
 	 * @return a complete message that includes the metadata and payload.
 	 */
 	public Message thingListDevices(Message message, Platform platform, Publisher<Message> publisher) throws BridgeException, BrokerException {
-	    List<Sensor> devices = null;
+	    
+		List<Sensor> devices = null;
 	    System.err.println("base URI: "+platform.getBaseEndpoint().toString());
         try {
         	platformTarget=client.target(platform.getBaseEndpoint().toString());
@@ -165,6 +170,7 @@ public class ProcessRequests {
             httpPost.releaseConnection();
         }
         logger.debug("Platform {} has been registered successfully.", platform.getPlatformId());
+        
         return msgMetaData;
     }
     
@@ -203,8 +209,12 @@ public class ProcessRequests {
      * @param bridgeCallbackUrl
      * @param publisher
      * @return either success or fail for the subscription
+     * @throws InvalidMessageException 
      */
-    public   Message thingSubribleMessage(Message message, Platform platform, URL bridgeCallbackUrl, Publisher<Message> publisher) throws IOException, MessageException, BridgeException, URISyntaxException {
+    public   Message thingSubribleMessage(Message message, Platform platform, URL bridgeCallbackUrl, Publisher<Message> publisher) throws IOException, MessageException, BridgeException, URISyntaxException, InvalidMessageException {
+    	
+    	SubscribeReq req = new SubscribeReq(message);
+    	
     	String conversationId = message.getMetadata().getConversationId().orElse(null); 
     	List<String> deviceIds = OpenIoTUtils.extractDeviceIds(message);
     	if (message.getMetadata().getMessageTypes().contains(MessageTypesEnum.SYS_INIT)) {
@@ -249,6 +259,7 @@ public class ProcessRequests {
             //call the observation listener
             createObservationsListener(conversationId, convCallbackUrl, platform, publisher);
             logger.debug("Subscribed successfully to devices {} with conversationId {}...", deviceIds, conversationId);
+            
             return message;
         }
     }
@@ -266,7 +277,9 @@ public class ProcessRequests {
         try{       
         	String path= "/*";
         	Spark.post(path, (request, response) -> {
-       		logger.debug("request sent tp host {} and to ip {} ",  request.host(), request.ip());
+       
+        
+       		logger.debug("request sent tp host {} and to ip {} ",   request.host(), request.ip());
         	logger.debug("New observation received from the platform.");
         	try {
                 // create message metadata
