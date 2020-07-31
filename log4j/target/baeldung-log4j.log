@@ -1,594 +1,103 @@
-2020-07-05 14:41:30 INFO  --------------------start test bridge=================
-2020-07-05 14:41:30 INFO  System property intermw.config.location is not set. Properties file 'bridge.properties' will be loaded from classpath.
-2020-07-05 14:41:30 DEBUG Searching for properties file 'bridge.properties' in classpath...
-2020-07-05 14:41:30 INFO  Properties file bridge.properties has been loaded successfully.
-2020-07-05 14:41:30 DEBUG Loading configuration for the platform http://openiot from file bridge.properties...
-2020-07-05 14:41:30 INFO  System property intermw.config.location is not set. Properties file 'bridge.properties' will be loaded from classpath.
-2020-07-05 14:41:30 DEBUG Searching for properties file 'bridge.properties' in classpath...
-2020-07-05 14:41:30 INFO  Properties file bridge.properties has been loaded successfully.
-2020-07-05 14:41:30 DEBUG Configuration has been loaded successfully: {scan-packages=eu.interiot, bridge.callback.url=https://192.168.0.31:8980/sil/callback}
-2020-07-05 14:41:31 DEBUG Jena initialization
-2020-07-05 14:41:31 DEBUG Add location: LocatorFile
-2020-07-05 14:41:31 DEBUG Add location: ClassLoaderLocator
-2020-07-05 14:41:31 DEBUG Failed to find configuration: file:location-mapping.rdf;file:location-mapping.n3;file:location-mapping.ttl;file:etc/location-mapping.rdf;file:etc/location-mapping.n3;file:etc/location-mapping.ttl
-2020-07-05 14:41:31 DEBUG Add location: LocatorFile
-2020-07-05 14:41:31 DEBUG Add location: LocatorURL
-2020-07-05 14:41:31 DEBUG Add location: ClassLoaderLocator
-2020-07-05 14:41:31 DEBUG Failed to find configuration: location-mapping.ttl;location-mapping.rdf;location-mapping.n3;etc/location-mapping.rdf;etc/location-mapping.n3;etc/location-mapping.ttl
-2020-07-05 14:41:31 DEBUG System architecture: 64 bit
-2020-07-05 14:41:31 DEBUG System architecture: 64 bit
-2020-07-05 14:41:31 DEBUG Lock : main
-2020-07-05 14:41:31 DEBUG Lock : main
-2020-07-05 14:41:32 DEBUG Lock : main
-2020-07-05 14:41:32 DEBUG Lock : main
-2020-07-05 14:41:32 INFO  thingRegisterMsg:eu.interiot.message.Message@19542407
-2020-07-05 14:41:32 DEBUG Lock : main
-2020-07-05 14:41:32 DEBUG Lock : main
-2020-07-05 14:41:32 INFO  thingSubscribeMsg: {}eu.interiot.message.Message@76304b46
-2020-07-05 14:41:32 DEBUG Lock : main
-2020-07-05 14:41:32 DEBUG Lock : main
-2020-07-05 14:41:32 DEBUG Lock : main
-2020-07-05 14:41:32 DEBUG Lock : main
-2020-07-05 14:41:32 DEBUG Creating bridge instance for the platform http://inter-iot.eu/example-platform1...
-2020-07-05 14:41:32 DEBUG OPENIOT bridge is initializing...
-2020-07-05 14:41:32 INFO  OPENIOT bridge has been initialized successfully.
-2020-07-05 14:41:32 INFO  registering open-iot bridge http://inter-iot.eu/example-platform1...
-2020-07-05 14:41:32 DEBUG CookieSpec selected: default
-2020-07-05 14:41:32 DEBUG Auth cache not set in the context
-2020-07-05 14:41:33 DEBUG Connection request: [route: {}->http://srvgal106.deri.ie:8018][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-2020-07-05 14:41:33 DEBUG Connection leased: [id: 0][route: {}->http://srvgal106.deri.ie:8018][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
-2020-07-05 14:41:33 DEBUG Opening connection {}->http://srvgal106.deri.ie:8018
-2020-07-05 14:41:33 DEBUG Connecting to srvgal106.deri.ie/140.203.154.235:8018
-2020-07-05 14:41:33 DEBUG Connection established 10.2.19.23:53516<->140.203.154.235:8018
-2020-07-05 14:41:33 DEBUG Executing request POST /api/register-platform HTTP/1.1
-2020-07-05 14:41:33 DEBUG Target auth state: UNCHALLENGED
-2020-07-05 14:41:33 DEBUG Proxy auth state: UNCHALLENGED
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> POST /api/register-platform HTTP/1.1
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> Content-Length: 56
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> Host: srvgal106.deri.ie:8018
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> Connection: Keep-Alive
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.6 (Java/1.8.0_91)
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> Accept-Encoding: gzip,deflate
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> "POST /api/register-platform HTTP/1.1[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> "Content-Length: 56[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> "Host: srvgal106.deri.ie:8018[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.6 (Java/1.8.0_91)[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> "[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 >> "platformId=http%3A%2F%2Finter-iot.eu%2Fexample-platform1"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "HTTP/1.1 404 Not Found[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "Expires: 0[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "X-XSS-Protection: 1; mode=block[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "Pragma: no-cache[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "Date: Sun, 05 Jul 2020 13:41:27 GMT[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "Connection: keep-alive[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "X-Content-Type-Options: nosniff[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "X-Application-Context: OpenIoTService:no-liquibase,dev,swagger:8018[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "9d[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "{[\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "  "timestamp" : "2020-07-05T13:41:27.086+0000",[\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "  "status" : 404,[\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "  "error" : "Not Found",[\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "  "message" : "Not Found",[\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "  "path" : "/api/register-platform"[\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << "}[\r][\n]"
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << HTTP/1.1 404 Not Found
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << Expires: 0
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << X-XSS-Protection: 1; mode=block
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << Pragma: no-cache
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << Date: Sun, 05 Jul 2020 13:41:27 GMT
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << Connection: keep-alive
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << X-Content-Type-Options: nosniff
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << Transfer-Encoding: chunked
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << Content-Type: application/json;charset=UTF-8
-2020-07-05 14:41:33 DEBUG http-outgoing-0 << X-Application-Context: OpenIoTService:no-liquibase,dev,swagger:8018
-2020-07-05 14:41:33 DEBUG Connection can be kept alive indefinitely
-2020-07-05 14:41:33 DEBUG Received response from the platform: HTTP/1.1 404 Not Found
-2020-07-05 14:41:33 DEBUG Cancelling request execution
-2020-07-05 14:41:33 DEBUG http-outgoing-0: Shutdown connection
-2020-07-05 14:41:33 DEBUG Connection discarded
-2020-07-05 14:41:33 DEBUG Connection released: [id: 0][route: {}->http://srvgal106.deri.ie:8018][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
-2020-07-05 14:41:33 DEBUG Platform http://inter-iot.eu/example-platform1 has been registered successfully.
-2020-07-05 14:41:33 DEBUG Lock : main
-2020-07-05 14:41:33 DEBUG Lock : main
-2020-07-05 14:41:33 DEBUG Lock : main
-2020-07-05 14:41:33 DEBUG Lock : main
-2020-07-05 14:41:33 DEBUG ListDevices started...
-2020-07-05 14:41:35 DEBUG Lock : main
-2020-07-05 14:41:35 DEBUG Lock : main
-2020-07-05 14:41:35 DEBUG Lock : main
-2020-07-05 14:41:35 DEBUG Lock : main
-2020-07-05 14:41:35 INFO  list of devices json serialization: {
-  "@graph" : [ {
-    "@graph" : [ {
-      "@id" : "msg:meta/915ce980-e056-4493-9052-9d7bde541d2e",
-      "msg:SenderPlatformId" : {
-        "@id" : "InterIoT:example-platform1"
-      },
-      "msg:conversationID" : "conva6bdf05b-2ec0-4693-a725-a9ae508f3fce",
-      "msg:dateTimeStamp" : "2020-07-05T14:41:35.548+01:00",
-      "msg:messageID" : "msg75412c11-1a8c-4ae2-a12c-bab69d3afd8c",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-        "@id" : "msg:Device_Init"
-      }, {
-        "@id" : "msg:meta"
-      } ]
-    } ],
-    "@id" : "msg:metadata"
-  }, {
-    "@graph" : [ {
-      "@id" : "http://srvgal106.deri.ie:8018/api/1",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/1",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/10",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/10",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/11",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/11",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/12",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/12",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/13",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/13",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/14",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/14",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/15",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/15",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/16",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/16",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/17",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/17",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/18",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/18",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/19",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/19",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/2",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/2",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/20",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/20",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/21",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/21",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/22",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/22",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/23",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/23",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/24",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/24",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/28",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/28",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/29",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/29",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/3",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/3",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/30",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/30",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/31",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/31",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/32",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/32",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/33",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/33",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/34",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/34",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/35",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/35",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/36",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/36",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/37",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/37",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/38",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/38",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/39",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/39",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/4",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/4",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/40",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/40",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/41",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/41",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/42",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/42",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/43",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/43",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/44",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/44",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/45",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/45",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/5",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/5",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/52",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/ihealth calories burned",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/53",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/ihealth activity",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/54",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/ihealth weight",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/55",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/ihealth sleep",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/56",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/ihealth pulse oximeter",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/57",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/Health DIA",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/58",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/Health SYS",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/59",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/Health SpO2",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/6",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/6",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/7",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/7",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/8",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/8",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    }, {
-      "@id" : "http://srvgal106.deri.ie:8018/api/9",
-      "iiot:hasName" : "http://srvgal106.deri.ie:8018/api/9",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ "http://www.w3.org/ns.sosa/Sensor", {
-        "@id" : "iiot:IoTDevice"
-      } ],
-      "sosa:IsHostedBy" : {
-        "@id" : "InterIoT:example-platform1"
-      }
-    } ],
-    "@id" : "msg:payload"
-  } ],
-  "@context" : {
-    "msg" : "http://inter-iot.eu/message/",
-    "iiotex" : "http://inter-iot.eu/GOIoTPex#",
-    "geosparql" : "http://www.opengis.net/ont/geosparql#",
-    "iiot" : "http://inter-iot.eu/GOIoTP#",
-    "InterIoT" : "http://inter-iot.eu/",
-    "ssn" : "http://www.w3.org/ns/ssn/",
-    "sosa" : "http://www.w3.org/ns/sosa/"
-  }
-}
-
-2020-07-05 14:41:35 INFO  MessageTypesEnum.LIST_DEVICES:http://inter-iot.eu/message/Discovery_List
-2020-07-05 14:41:35 DEBUG subscribe() started.
-2020-07-05 14:41:35 INFO  bridge callbackURL is set to https://192.168.0.31:8980/sil/callback
-2020-07-05 14:42:41 DEBUG Subscribing to devices [http://srvgal106.deri.ie:8018/api/sensor/59] with conversationId conv614d3621-7399-45b1-bf2f-505b24045ea903...
+2020-07-31 16:52:30 INFO  --------------------start test bridge=================
+2020-07-31 16:52:30 INFO  System property intermw.config.location is not set. Properties file 'bridge.properties' will be loaded from classpath.
+2020-07-31 16:52:30 DEBUG Searching for properties file 'bridge.properties' in classpath...
+2020-07-31 16:52:30 INFO  Properties file bridge.properties has been loaded successfully.
+2020-07-31 16:52:30 DEBUG Loading configuration for the platform http://openiot from file bridge.properties...
+2020-07-31 16:52:30 INFO  System property intermw.config.location is not set. Properties file 'bridge.properties' will be loaded from classpath.
+2020-07-31 16:52:30 DEBUG Searching for properties file 'bridge.properties' in classpath...
+2020-07-31 16:52:30 INFO  Properties file bridge.properties has been loaded successfully.
+2020-07-31 16:52:30 DEBUG Configuration has been loaded successfully: {scan-packages=eu.interiot, bridge.callback.url=https://192.168.0.31:8980/sil/callback}
+2020-07-31 16:52:30 DEBUG Jena initialization
+2020-07-31 16:52:30 DEBUG Add location: LocatorFile
+2020-07-31 16:52:30 DEBUG Add location: ClassLoaderLocator
+2020-07-31 16:52:30 DEBUG Failed to find configuration: file:location-mapping.rdf;file:location-mapping.n3;file:location-mapping.ttl;file:etc/location-mapping.rdf;file:etc/location-mapping.n3;file:etc/location-mapping.ttl
+2020-07-31 16:52:30 DEBUG Add location: LocatorFile
+2020-07-31 16:52:30 DEBUG Add location: LocatorURL
+2020-07-31 16:52:30 DEBUG Add location: ClassLoaderLocator
+2020-07-31 16:52:30 DEBUG Failed to find configuration: location-mapping.ttl;location-mapping.rdf;location-mapping.n3;etc/location-mapping.rdf;etc/location-mapping.n3;etc/location-mapping.ttl
+2020-07-31 16:52:31 DEBUG System architecture: 64 bit
+2020-07-31 16:52:31 DEBUG System architecture: 64 bit
+2020-07-31 16:52:31 DEBUG Lock : main
+2020-07-31 16:52:31 DEBUG Lock : main
+2020-07-31 16:52:31 DEBUG Lock : main
+2020-07-31 16:52:31 DEBUG Lock : main
+2020-07-31 16:52:31 INFO  thingRegisterMsg:eu.interiot.message.Message@487db668
+2020-07-31 16:52:31 DEBUG Lock : main
+2020-07-31 16:52:31 DEBUG Lock : main
+2020-07-31 16:52:31 INFO  thingSubscribeMsg: {}eu.interiot.message.Message@22875539
+2020-07-31 16:52:31 DEBUG Lock : main
+2020-07-31 16:52:31 DEBUG Lock : main
+2020-07-31 16:52:31 DEBUG Lock : main
+2020-07-31 16:52:31 DEBUG Lock : main
+2020-07-31 16:52:31 DEBUG Creating bridge instance for the platform http://inter-iot.eu/example-platform1...
+2020-07-31 16:52:32 DEBUG OPENIOT bridge is initializing...
+2020-07-31 16:52:32 INFO  OPENIOT bridge has been initialized successfully.
+2020-07-31 16:52:32 INFO  registering open-iot bridge http://inter-iot.eu/example-platform1...
+2020-07-31 16:52:32 DEBUG CookieSpec selected: default
+2020-07-31 16:52:32 DEBUG Auth cache not set in the context
+2020-07-31 16:52:32 DEBUG Connection request: [route: {}->http://srvgal106.deri.ie:8018][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2020-07-31 16:52:32 DEBUG Connection leased: [id: 0][route: {}->http://srvgal106.deri.ie:8018][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2020-07-31 16:52:32 DEBUG Opening connection {}->http://srvgal106.deri.ie:8018
+2020-07-31 16:52:32 DEBUG Connecting to srvgal106.deri.ie/140.203.154.235:8018
+2020-07-31 16:52:32 DEBUG Connection established 192.168.0.31:55292<->140.203.154.235:8018
+2020-07-31 16:52:32 DEBUG Executing request POST /api/register-platform HTTP/1.1
+2020-07-31 16:52:32 DEBUG Target auth state: UNCHALLENGED
+2020-07-31 16:52:32 DEBUG Proxy auth state: UNCHALLENGED
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> POST /api/register-platform HTTP/1.1
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> Content-Length: 56
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> Host: srvgal106.deri.ie:8018
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> Connection: Keep-Alive
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.6 (Java/1.8.0_91)
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> "POST /api/register-platform HTTP/1.1[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> "Content-Length: 56[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> "Host: srvgal106.deri.ie:8018[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.6 (Java/1.8.0_91)[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> "[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 >> "platformId=http%3A%2F%2Finter-iot.eu%2Fexample-platform1"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "HTTP/1.1 404 Not Found[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "Expires: 0[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "Cache-Control: no-cache, no-store, max-age=0, must-revalidate[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "X-XSS-Protection: 1; mode=block[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "Pragma: no-cache[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "Date: Fri, 31 Jul 2020 15:52:24 GMT[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "X-Content-Type-Options: nosniff[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "Content-Type: application/json;charset=UTF-8[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "X-Application-Context: OpenIoTService:no-liquibase,dev,swagger:8018[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "9d[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "{[\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "  "timestamp" : "2020-07-31T15:52:24.444+0000",[\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "  "status" : 404,[\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "  "error" : "Not Found",[\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "  "message" : "Not Found",[\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "  "path" : "/api/register-platform"[\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << "}[\r][\n]"
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << HTTP/1.1 404 Not Found
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << Expires: 0
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << X-XSS-Protection: 1; mode=block
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << Pragma: no-cache
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << Date: Fri, 31 Jul 2020 15:52:24 GMT
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << Connection: keep-alive
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << X-Content-Type-Options: nosniff
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << Transfer-Encoding: chunked
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << Content-Type: application/json;charset=UTF-8
+2020-07-31 16:52:32 DEBUG http-outgoing-0 << X-Application-Context: OpenIoTService:no-liquibase,dev,swagger:8018
+2020-07-31 16:52:32 DEBUG Connection can be kept alive indefinitely
+2020-07-31 16:52:32 DEBUG Received response from the platform: HTTP/1.1 404 Not Found
+2020-07-31 16:52:32 DEBUG Cancelling request execution
+2020-07-31 16:52:32 DEBUG http-outgoing-0: Shutdown connection
+2020-07-31 16:52:32 DEBUG Connection discarded
+2020-07-31 16:52:32 DEBUG Connection released: [id: 0][route: {}->http://srvgal106.deri.ie:8018][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2020-07-31 16:52:32 DEBUG Platform http://inter-iot.eu/example-platform1 has been registered successfully.
+2020-07-31 16:52:32 DEBUG Lock : main
+2020-07-31 16:52:32 DEBUG Lock : main
+2020-07-31 16:52:32 DEBUG Lock : main
+2020-07-31 16:52:32 DEBUG Lock : main

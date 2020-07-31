@@ -1,14 +1,13 @@
 /Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/translators/syntax/openiot/domain/Place.java
-/Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/translators/syntax/openiot/ProcessRequests.java
+/Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/intermw/bridge/openiot/OpenIoTBridgeOld.java
 /Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/translators/syntax/openiot/domain/Platform.java
+/Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/intermw/bridge/openiot/ProcessRequests.java
 /Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/intermw/bridge/openiot/OpenIoTUtils.java
-/Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/translators/syntax/openiot/ClientService.java
 /Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/translators/syntax/openiot/TranslateObsrToRDF.java
 /Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/translators/syntax/openiot/domain/MeasurementUnit.java
 /Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/translators/syntax/openiot/domain/Instance.java
 /Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/translators/syntax/openiot/domain/Sensor.java
 /Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/intermw/bridge/openiot/OpenIoTBridge.java
-/Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/translators/syntax/openiot/OpenIoTServiceImpl.java
 /Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/translators/syntax/openiot/domain/QuanityKind.java
 /Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/translators/syntax/openiot/domain/Category.java
 /Users/user/Documents/workspace/openiot.bridge/src/main/java/eu/interiot/translators/syntax/openiot/domain/QuantityKind.java
