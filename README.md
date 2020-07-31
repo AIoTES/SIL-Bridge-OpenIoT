@@ -1,5 +1,5 @@
 #  OponIoT Bridge
-OpenIoT bridge is a plug-inbased component in SIL. The purpose of OpenIoT is two folded: (i) upstreaming and downstreaming messaging (ii) translating messages. 
+OpenIoT bridge is a plugin based component in SIL. The purpose of OpenIoT is two folded: (i) upstreaming and downstreaming messaging (ii) translating messages. 
 
 ## Getting stated
 After deploying SIL component in AIoTES 2.0, the OpenIoT bridge must be installed inside the docker component (i.e., inermw-container). Following files need to be copied in their respective docker directories
@@ -93,7 +93,7 @@ When platform is registered, the next step is to subscribe the number and types 
 {
   "deviceIds": [
     "http://srvgal106.deri.ie:8018/api/53",
-    "if more devices has to add"
+    "if more device has to add"
   ]
 }
 ```
