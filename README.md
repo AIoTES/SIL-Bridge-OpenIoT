@@ -1,7 +1,7 @@
 #  OponIoT Bridge
 OpenIoT bridge is a plugin based component in SIL. The purpose of OpenIoT is two folded: (i) upstreaming and downstreaming messaging (ii) translating messages. 
 
-## Getting stated
+## Getting started
 After deploying SIL component in AIoTES 2.0, the OpenIoT bridge must be installed inside the docker component (i.e., inermw-container). Following files need to be copied in their respective docker directories
 *  openiot.bridge-2.3.0-SNAPSHOT.jar  & syntactic-translators-1.0.jar in  "<intermw-container>:/usr/local/tomcat/webapps/ROOT/WEB-INF/lib" directory
 * OpenIoTBridge.properties  in "<intermw-container>:/etc/inter-iot/intermw" directory
