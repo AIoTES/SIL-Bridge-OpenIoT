@@ -70,9 +70,7 @@ public class OpenIoTBridge extends AbstractBridge {
         super(configuration, platform);
         logger.debug("OpenIoT bridge is initializing...");
         httpClient = HttpClientBuilder.create().build();
-        // an example how to retrieve a property from bridge configuration file
         Properties myProperty = configuration.getProperties();
-     
         client = ClientBuilder.newClient();
 
         logger.info("OpenIoT bridge has been initialized successfully.");
@@ -81,9 +79,6 @@ public class OpenIoTBridge extends AbstractBridge {
     @Override
     public Message registerPlatform(Message message) throws Exception {
         logger.debug("Registering platform {}...", platform.getPlatformId());
-        // note: platform object is set by the AbstractBridge constructor when instantiating a new bridge, it
-        // contains data extracted from the REGISTER_PLATFORM message. On the other hand the raw
-        // REGISTER_PLATFORM message is given as a message parameter of registerPlatform method.
 
         platformTarget = client.target(platform.getBaseEndpoint().toURI());
 
@@ -103,7 +98,6 @@ public class OpenIoTBridge extends AbstractBridge {
         try {
             HttpResponse resp = httpClient.execute(httpPost);
             logger.debug("Received response from the platform: {}", resp.getStatusLine());
-           // temporaryly commented out, hoan has to implement
             /*if (resp.getStatusLine().getStatusCode() != 204) {
                 throw new BridgeException("Invalid response code received from the platform: " + resp.getStatusLine().toString());
             }*/
@@ -203,8 +197,6 @@ public class OpenIoTBridge extends AbstractBridge {
         logger.debug("Creating callback listener for conversation {} listening at {}...", conversationId,
                 new URL(bridgeCallbackUrl, conversationId));
 
-        String path= "/*";
-        
         Spark.post(conversationId, (request, response) -> {
             logger.debug("Observation received from the Example platform {}: {}", platform.getPlatformId(), request.body());
             try {

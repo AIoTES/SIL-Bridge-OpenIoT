@@ -84,18 +84,7 @@ public class OpenIoTUtils {
             throw new BridgeException("Invalid UNSUBSCRIBE message: failed to extract conversationId");
         }
     }
-    
-    
-//    public static Set<String> getEntityIDsFromPayload(MessagePayload payload, String entityType) {
-//        Model model = payload.getJenaModel();
-//        return model.listStatements(new SimpleSelector(null, RDF.type, model.createResource(entityType))).toSet().stream().map(x -> x.getSubject().toString()).collect(Collectors.toSet());
-//    }
-    
-
-//    public static Set<String> getEntityIds(Message message){
-//		return getEntityIDsFromPayload(message.getPayload(), EntityTypeDevice);
-//	}
-    
+ 
     public static String[] filterThingID(String thingId) {
     	String[] filteredString = null; //= thingId;
 

@@ -9,7 +9,6 @@
  * 
  *
  * For more information, contact:
- * - @author <a href="mailto:majuse@upv.es">Matilde Julián</a>  
  * - Project coordinator:  <a href="mailto:coordinator@activage.eu"></a>
  *  
  *
